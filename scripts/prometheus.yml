@@ -7,7 +7,7 @@ scrape_configs:
   - job_name: 'app'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['10.200.10.1:8080']
+      - targets: ['springthroughput.apps.montclair.cf-app.com']
   - job_name: 'client'
     metrics_path: '/prometheus'
     static_configs:

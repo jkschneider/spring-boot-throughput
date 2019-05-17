@@ -12,6 +12,7 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+	jcenter()
 	maven { url 'https://repo.spring.io/snapshot' }
 	maven { url 'https://repo.spring.io/milestone' }
 }
@@ -20,6 +21,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'io.micrometer:micrometer-registry-prometheus'
+	implementation 'io.micrometer.prometheus:prometheus-rsocket-proxy-client:0.3.1'
+	implementation 'com.netflix.frigga:frigga:0.18.0'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'

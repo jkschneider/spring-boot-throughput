@@ -26,7 +26,7 @@
       "color": {
         "cardColor": "#b4ff00",
         "colorScale": "sqrt",
-        "colorScheme": "interpolateOranges",
+        "colorScheme": "interpolateSpectral",
         "exponent": 0.5,
         "mode": "spectrum"
       },
@@ -47,6 +47,7 @@
       "links": [],
       "targets": [
         {
+          "$$hashKey": "object:358",
           "expr": "sum(rate(http_server_requests_seconds_bucket{uri=\"/persons\", le=~\"0\\\\.[0-4]\\\\d+|\\\\+Inf\"}[1m])) by (le)",
           "format": "heatmap",
           "intervalFactor": 1,
@@ -88,6 +89,92 @@
       "gridPos": {
         "h": 9,
         "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:541",
+          "expr": "process_cpu_usage",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:598",
+          "format": "percentunit",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:599",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fill": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
         "x": 0,
         "y": 9
       },
@@ -115,7 +202,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(http_server_requests_seconds_count{uri=\"/persons\", exception=\"None\"}[1m])",
+          "$$hashKey": "object:188",
+          "expr": "rate(http_server_requests_seconds_count{uri=\"/persons\", exception=\"None\"}[10s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{uri}}",
@@ -254,8 +342,8 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
-    "to": "now"
+    "from": "now-35m",
+    "to": "now-30m"
   },
   "timepicker": {
     "refresh_intervals": [

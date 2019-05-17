@@ -28,7 +28,7 @@ public class DemoClient {
     Hooks.onOperatorDebug();
 
     WebClient client = WebClient.builder()
-      .baseUrl("http://localhost:8080")
+      .baseUrl("http://springthroughput.apps.montclair.cf-app.com")
       .build();
 
     Flux
